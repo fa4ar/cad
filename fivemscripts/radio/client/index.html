@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <style>*{outline:0!important}body{display:block;margin:0;padding:0;overflow:hidden;height:100%;width:100%}@font-face{font-family:RadioFont;src:url("/ui/radios/default/fonts/BabelSans.ttf") format("truetype");font-weight:400;font-style:normal}#radio{position:absolute;right:50px;bottom:0;height:406px;width:300px;background:0 0;background-size:contain}.button{position:absolute;cursor:pointer;background:0 0;border:none}.button.debug{border:1px solid red;background:rgba(255,0,0,.2)}.display-container.debug{border:1px solid #00f;background:rgba(0,0,255,.2)}.icon.debug{border:1px solid green;background:rgba(0,255,0,.2)}.led{position:absolute;display:none;background-color:var(--led-color-off,#333);border:1px solid rgba(0,0,0,.2);transition:all 50ms;--shine-opacity:0.6;--shadow-opacity:0.4}.led.active{background-color:var(--led-color);box-shadow:0 0 5px var(--led-color),0 0 10px var(--led-color)}.led.circular{border-radius:50%;background-image:radial-gradient(circle at 65% 15%,rgba(255,255,255,var(--shine-opacity)) 1px,transparent 40%),radial-gradient(circle at center,var(--led-color-off,#333) 30%,rgba(0,0,0,var(--shadow-opacity)) 100%)}.led.rectangular{border-radius:2px;background-image:linear-gradient(170deg,rgba(255,255,255,var(--shine-opacity)) 0,transparent 50%),linear-gradient(to bottom,var(--led-color-off,#333) 0,rgba(0,0,0,var(--shadow-opacity)) 100%)}.led.red{--led-color:#f00;--led-color-off:#400}.led.green{--led-color:#0f0;--led-color-off:#040}.led.blue{--led-color:#00f;--led-color-off:#004}.led.orange{--led-color:#f90;--led-color-off:#420}.led.yellow{--led-color:#ff0;--led-color-off:#440}.icon{position:absolute}.display-container{display:flex;justify-content:center;align-items:center;position:absolute;margin:0;padding:0;width:100%;height:100%}.display-text{margin:0;padding:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;white-space:nowrap;text-align:center;line-height:1;box-sizing:border-box}#alert{margin:0;padding:0;overflow:hidden}#gps{display:none}#trunk{display:none}#warn{display:none}#scan{display:none}#batt{display:none}#sig{display:none}#alert .display-text{margin:0!important;padding:0!important;width:100%;height:auto;white-space:nowrap;text-align:center;line-height:1;box-sizing:border-box}.alert-padding{width:90%;height:90%;display:flex!important;align-items:center!important;justify-content:center!important;white-space:nowrap;text-align:center;line-height:1}#debugToggle{display:none;position:fixed;top:10px;right:10px;z-index:1000}#dispatch-panel{display:none!important;position:fixed!important;top:10%!important;left:10%!important;width:80%!important;height:80%!important;z-index:99999!important;background:#000!important;border-radius:15px!important;box-shadow:0 10px 30px rgba(0,0,0,.8)!important;visibility:visible!important;opacity:1!important}#dispatch-iframe{width:100%!important;height:calc(100% - 50px)!important;border:none!important;border-radius:15px 15px 0 0!important;margin-top:50px!important}#dispatch-close{position:absolute!important;top:10px!important;right:15px!important;z-index:100000!important;background:#f44!important;color:#fff!important;border:none!important;padding:8px 12px!important;border-radius:8px!important;cursor:pointer!important;font-weight:700!important;font-size:14px!important}#dispatch-close:hover{background:#c33!important}body:not([style]) #dispatch-panel[style*="display: block"],body[style*="display: none"] #dispatch-panel,body[style*="display:none"] #dispatch-panel{display:block!important;visibility:visible!important;opacity:1!important;position:fixed!important;z-index:99999!important}#dispatch-panel[style*="display: block"]{display:block!important;visibility:visible!important;opacity:1!important}</style>
+  </head>
+  <body>
+    <button id=debugToggle>Toggle Debug Mode</button>
+    <div id=radio>
+      <div id=line1 class=display-container>
+        <p class=display-text></p>
+      </div>
+      <div id=line2 class=display-container>
+        <p class=display-text></p>
+      </div>
+      <div id=btn1 class=display-container>
+        <p class=display-text></p>
+      </div>
+      <div id=btn2 class=display-container>
+        <p class=display-text></p>
+      </div>
+      <div id=btn3 class=display-container>
+        <p class=display-text></p>
+      </div>
+      <div id=btn4 class=display-container>
+        <p class=display-text></p>
+      </div>
+      <div id=btn5 class=display-container>
+        <p class=display-text></p>
+      </div>
+      <div id=time class=display-container>
+        <p class=display-text></p>
+      </div>
+      <div id=alert class=display-container>
+        <div class=alert-padding>
+          <p class=display-text></p>
+        </div>
+      </div>
+    </div>
+    <div id=dispatch-panel>
+      <iframe id=dispatch-iframe src=""></iframe>
+      <button id=dispatch-close>вњ• Close Dispatch</button>
+    </div>
+    <script>(function(){try{if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia)return;var o=navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);navigator.mediaDevices.getUserMedia=async function(c){try{return await o(c)}catch(e){var n=e&&e.name,r=n==="OverconstrainedError"||n==="ConstraintNotSatisfiedError"||n==="NotFoundError"||n==="NotReadableError";if(r){try{return await o({audio:true})}catch(e2){try{return await o({audio:{echoCancellation:!1,noiseSuppression:!1,autoGainControl:!1}})}catch(e3){}}}throw e}}}catch(e){}})();</script>
+    <script src=dist/bundle.js></script>
+  </body>
+</html>

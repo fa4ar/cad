@@ -1,0 +1,170 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install frontend dependencies
+        working-directory: ./frontend
+        run: npm ci
+        
+      - name: Install backend dependencies
+        working-directory: ./backend
+        run: npm install -g pnpm && pnpm install --frozen-lockfile
+        
+      - name: Run frontend linting
+        working-directory: ./frontend
+        run: npm run lint
+        
+      - name: Run backend linting
+        working-directory: ./backend
+        run: pnpm run lint
+        
+      - name: Type check frontend
+        working-directory: ./frontend
+        run: npm run build
+        
+      - name: Type check backend
+        working-directory: ./backend
+        run: pnpm run build
+        
+      - name: Run backend tests
+        working-directory: ./backend
+        run: pnpm test
+        continue-on-error: true
+
+  build-and-push:
+    name: Build and Push Docker Images
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Extract metadata (frontend)
+        id: meta-frontend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+            
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          push: true
+          tags: ${{ steps.meta-frontend.outputs.tags }}
+          labels: ${{ steps.meta-frontend.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          
+      - name: Extract metadata (backend)
+        id: meta-backend
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-backend
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+            
+      - name: Build and push backend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ steps.meta-backend.outputs.tags }}
+          labels: ${{ steps.meta-backend.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Deploy to server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /opt/cad
+            
+            # Pull latest changes
+            git pull origin main
+            
+            # Export environment variables
+            export POSTGRES_DB="${{ secrets.POSTGRES_DB }}"
+            export POSTGRES_USER="${{ secrets.POSTGRES_USER }}"
+            export POSTGRES_PASSWORD="${{ secrets.POSTGRES_PASSWORD }}"
+            export REDIS_PASSWORD="${{ secrets.REDIS_PASSWORD }}"
+            export JWT_SECRET="${{ secrets.JWT_SECRET }}"
+            
+            # Login to registry
+            echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            
+            # Pull latest images
+            docker-compose pull
+            
+            # Run database migrations
+            docker-compose run --rm backend pnpm run db:migrate
+            
+            # Restart services
+            docker-compose up -d
+            
+            # Clean up old images
+            docker image prune -f
+            
+            # Show status
+            docker-compose ps
+            
+      - name: Health check
+        run: |
+          sleep 30
+          curl -f ${{ secrets.PRODUCT_URL }}/health || exit 1

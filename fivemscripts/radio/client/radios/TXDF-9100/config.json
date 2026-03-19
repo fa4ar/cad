@@ -1,0 +1,210 @@
+{
+  "toneSet": "default",
+  "font": "Charmset.ttf",
+  "fontSize": 12,
+  "fontWeight": "normal",
+  "radioWidth": 550,
+  "radioHeight": 293.33,
+  "radioBGColor": "#000000",
+  "defaultBottomPadding": 50,
+  "alert": {
+    "x": 274,
+    "y": 36,
+    "width": 428,
+    "height": 19,
+    "size": 12
+  },
+  "time": {
+    "enabled": true,
+    "x": 115,
+    "y": 131,
+    "color": "#14ab03",
+    "width": 80,
+    "height": 14,
+    "size": 13
+  },
+  "texts": [
+    {
+      "key": "line1",
+      "color": "#14ab03",
+      "size": 19,
+      "width": 200,
+      "height": 25,
+      "x": 272,
+      "y": 60
+    },
+    {
+      "key": "line2",
+      "width": 200,
+      "color": "#14ab03",
+      "size": 19,
+      "height": 25,
+      "x": 272,
+      "y": 90
+    },
+    {
+      "key": "btn1",
+      "color": "#14ab03",
+      "size": 10,
+      "width": 25,
+      "height": 14,
+      "x": 302,
+      "y": 127
+    },
+    {
+      "key": "btn2",
+      "color": "#14ab03",
+      "size": 10,
+      "width": 25,
+      "height": 14,
+      "x": 357,
+      "y": 127
+    },
+    {
+      "key": "btn3",
+      "color": "#14ab03",
+      "size": 10,
+      "width": 25,
+      "height": 14,
+      "x": 412,
+      "y": 127
+    },
+    {
+      "key": "btn4",
+      "color": "#14ab03",
+      "size": 10,
+      "width": 25,
+      "height": 14,
+      "x": 467,
+      "y": 127
+    },
+    {
+      "key": "btn5",
+      "size": 0
+    }
+  ],
+  "buttons": [
+    {
+      "key": "power",
+      "x": 95,
+      "y": 232,
+      "width": 25,
+      "height": 25
+    },
+    {
+      "key": "btnLeft",
+      "x": 299,
+      "y": 213,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "key": "btnRight",
+      "x": 414,
+      "y": 215,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "key": "btnUp",
+      "x": 355,
+      "y": 215,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "key": "btnDown",
+      "x": 355,
+      "y": 253,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "key": "home",
+      "x": 81,
+      "y": 175,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "key": "close",
+      "x": 175,
+      "y": 228,
+      "width": 15,
+      "height": 20
+    },
+    {
+      "key": "btn1",
+      "x": 301,
+      "y": 176,
+      "width": 27,
+      "height": 27
+    },
+    {
+      "key": "btn2",
+      "x": 356,
+      "y": 176,
+      "width": 27,
+      "height": 27
+    },
+    {
+      "key": "btn3",
+      "x": 412,
+      "y": 176,
+      "width": 27,
+      "height": 27
+    },
+    {
+      "key": "btn4",
+      "x": 467,
+      "y": 176,
+      "width": 25,
+      "height": 25
+    }
+  ],
+  "leds": [],
+  "icons": [
+    {
+      "key": "sig",
+      "x": 77,
+      "y": 56,
+      "width": 15,
+      "height": 15
+    },
+    {
+      "key": "batt",
+      "x": 77,
+      "y": 81,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "key": "warn",
+      "x": 77,
+      "y": 107,
+      "width": 15,
+      "height": 15
+    },
+    {
+      "key": "scan",
+      "x": 182,
+      "y": 127,
+      "width": 13,
+      "height": 13
+    },
+    {
+      "key": "trunk",
+      "x": 215,
+      "y": 127,
+      "width": 13,
+      "height": 13
+    },
+    {
+      "key": "gps",
+      "x": 255,
+      "y": 127,
+      "width": 13,
+      "height": 13
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "toneSet": "default",
+  "radioWidth": 601,
+  "radioHeight": 234,
+  "radioBGColor": "#e8e8e9",
+  "radioBGDarkColor": "#090808",
+  "defaultBottomPadding": 50,
+  "alert": {
+    "x": 228,
+    "y": 134,
+    "width": 174,
+    "height": 15,
+    "size": 12,
+    "color": "#464d49",
+    "darkColor": "#ffffff"
+  },
+  "time": {
+    "enabled": true,
+    "x": 228,
+    "y": 134,
+    "color": "#464d49",
+    "darkColor": "#ffffff",
+    "width": 77,
+    "height": 15,
+    "size": 12
+  },
+  "texts": [
+    {
+      "key": "line1",
+      "color": "#464d49",
+      "darkColor": "#ffffff",
+      "size": 16,
+      "width": 100,
+      "height": 15,
+      "x": 228,
+      "y": 95
+    },
+    {
+      "key": "line2",
+      "width": 100,
+      "color": "#464d49",
+      "darkColor": "#ffffff",
+      "size": 16,
+      "height": 15,
+      "x": 228,
+      "y": 112
+    },
+    {
+      "key": "btn1",
+      "color": "#e6efeb",
+      "darkColor": "#ffffff",
+      "size": 10,
+      "width": 25,
+      "height": 14,
+      "x": 158,
+      "y": 150
+    },
+    {
+      "key": "btn2",
+      "color": "#e6efeb",
+      "darkColor": "#ffffff",
+      "size": 10,
+      "width": 25,
+      "height": 14,
+      "x": 203,
+      "y": 150
+    },
+    {
+      "key": "btn3",
+      "color": "#e6efeb",
+      "darkColor": "#ffffff",
+      "size": 10,
+      "width": 25,
+      "height": 14,
+      "x": 249,
+      "y": 150
+    },
+    {
+      "key": "btn4",
+      "color": "#e6efeb",
+      "darkColor": "#ffffff",
+      "size": 10,
+      "width": 25,
+      "height": 14,
+      "x": 292,
+      "y": 150
+    },
+    {
+      "key": "btn5",
+      "size": 0
+    }
+  ],
+  "buttons": [
+    {
+      "key": "power",
+      "x": 85,
+      "y": 80,
+      "width": 25,
+      "height": 25
+    },
+    {
+      "key": "btnLeft",
+      "x": 505,
+      "y": 168,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "key": "btnRight",
+      "x": 552,
+      "y": 167,
+      "width": 22,
+      "height": 20
+    },
+    {
+      "key": "btnUp",
+      "x": 528,
+      "y": 142,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "key": "btnDown",
+      "x": 530,
+      "y": 194,
+      "width": 20,
+      "height": 20
+    },
+    {
+      "key": "chUp",
+      "x": 354,
+      "y": 80,
+      "width": 20,
+      "height": 25
+    },
+    {
+      "key": "chDwn",
+      "x": 354,
+      "y": 114,
+      "width": 20,
+      "height": 25
+    },
+    {
+      "key": "emergency",
+      "x": 527,
+      "y": 79,
+      "width": 25,
+      "height": 25
+    },
+    {
+      "key": "home",
+      "x": 352,
+      "y": 196,
+      "width": 25,
+      "height": 25
+    },
+    {
+      "key": "close",
+      "x": 353,
+      "y": 156,
+      "width": 25,
+      "height": 25
+    },
+    {
+      "key": "btn1",
+      "x": 154,
+      "y": 197,
+      "width": 27,
+      "height": 25
+    },
+    {
+      "key": "btn2",
+      "x": 203,
+      "y": 197,
+      "width": 27,
+      "height": 25
+    },
+    {
+      "key": "btn3",
+      "x": 252,
+      "y": 197,
+      "width": 27,
+      "height": 25
+    },
+    {
+      "key": "btn4",
+      "x": 300,
+      "y": 197,
+      "width": 27,
+      "height": 25
+    }
+  ],
+  "leds": [
+    {
+      "key": "power",
+      "color": "red",
+      "x": 85,
+      "y": 108,
+      "width": 20,
+      "height": 4,
+      "roundness": 4
+    },
+    {
+      "key": "connected",
+      "color": "green",
+      "x": 85,
+      "y": 121,
+      "width": 20,
+      "height": 4,
+      "roundness": 4
+    },
+    {
+      "key": "transmit",
+      "color": "orange",
+      "x": 85,
+      "y": 134,
+      "width": 20,
+      "height": 4,
+      "roundness": 4
+    }
+  ],
+  "icons": [
+    {
+      "key": "sig",
+      "x": 151,
+      "y": 80,
+      "width": 15,
+      "height": 15
+    },
+    {
+      "key": "scan",
+      "x": 181,
+      "y": 81,
+      "width": 13,
+      "height": 13
+    },
+    {
+      "key": "trunk",
+      "x": 211,
+      "y": 81,
+      "width": 13,
+      "height": 13
+    },
+    {
+      "key": "warn",
+      "x": 241,
+      "y": 81,
+      "width": 15,
+      "height": 15
+    },
+    {
+      "key": "gps",
+      "x": 271,
+      "y": 81,
+      "width": 13,
+      "height": 13
+    },
+    {
+      "key": "batt",
+      "x": 300,
+      "y": 81,
+      "width": 16,
+      "height": 16
+    }
+  ]
+}

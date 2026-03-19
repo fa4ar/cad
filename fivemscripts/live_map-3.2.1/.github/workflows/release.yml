@@ -1,0 +1,41 @@
+name: Push release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_release:
+    name: Create release and publish
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    if: github.event_name == 'push' && startsWith(github.event.head_commit.message, 'chore(release)') && !contains(github.event.head_commit.message, '[skip ci]')
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: build integrations
+        run: pnpm run build
+
+      - name: Zip integrations
+        run: pnpm run build:zip
+
+      - name: Create GitHub release
+        run: node ./scripts/action-zip.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

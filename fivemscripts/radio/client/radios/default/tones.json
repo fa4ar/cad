@@ -1,0 +1,45 @@
+{
+  "PTT": [
+    { "freq": 900, "duration": 40 },
+    { "freq": 900, "duration": 40, "delay": 60 },
+    { "freq": 900, "duration": 40, "delay": 55 },
+    { "freq": 900, "duration": 40, "delay": 55 }
+  ],
+  "PTT_END": [{ "freq": 910, "duration": 80 }],
+  "TX_START": [
+    { "freq": 1800, "duration": 50, "delay": 60 },
+    { "freq": 1800, "duration": 50 }
+  ],
+  "TX_END": [{ "freq": 1500, "duration": 90 }],
+  "BEEP": [{ "freq": 910, "duration": 250 }],
+  "BONK": [{ "freq": 700, "duration": 300 }],
+  "CHIRP": [
+    { "freq": 1820, "duration": 20 },
+    { "freq": 1820, "duration": 20, "delay": 25 },
+    { "freq": 1820, "duration": 20, "delay": 275 },
+    { "freq": 1820, "duration": 20, "delay": 50 },
+    { "freq": 1820, "duration": 20, "delay": 50 }
+  ],
+  "PANIC": [
+    { "freq": 1200, "duration": 200, "delay": 200 },
+    { "freq": 900, "duration": 200, "delay": 200 },
+    { "freq": 1200, "duration": 200, "delay": 200 },
+    { "freq": 900, "duration": 200, "delay": 200 },
+    { "freq": 1200, "duration": 200, "delay": 200 },
+    { "freq": 900, "duration": 200, "delay": 200 },
+    { "freq": 1200, "duration": 200, "delay": 200 },
+    { "freq": 900, "duration": 200, "delay": 200 },
+    { "freq": 1200, "duration": 200, "delay": 200 },
+    { "freq": 900, "duration": 200 }
+  ],
+  "ALERT_A": [
+    { "freq": 1000, "duration": 140, "delay": 210 },
+    { "freq": 1000, "duration": 140, "delay": 210 },
+    { "freq": 1000, "duration": 140 }
+  ],
+  "ALERT_B": [
+    { "freq": 800, "duration": 200, "delay": 200 },
+    { "freq": 570, "duration": 170, "delay": 170 },
+    { "freq": 400, "duration": 150 }
+  ]
+}

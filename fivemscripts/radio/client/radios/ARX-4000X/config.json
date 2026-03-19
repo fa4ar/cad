@@ -1,0 +1,253 @@
+{
+  "toneSet": "default",
+  "radioBGColor": "#97abc2",
+  "radioBGDarkColor": "#434e5f",
+  "radioWidth": 250,
+  "radioHeight": 455.61,
+  "defaultBottomPadding": 0,
+  "alert": {
+    "x": 125,
+    "y": 345,
+    "width": 108,
+    "height": 11,
+    "size": 10,
+    "color": "#464d49",
+    "darkColor": "#ffffff"
+  },
+  "time": {
+    "enabled": true,
+    "x": 124,
+    "y": 345,
+    "color": "#464d49",
+    "darkColor": "#ffffff",
+    "width": 77,
+    "height": 10,
+    "size": 10
+  },
+  "texts": [
+    {
+      "key": "line1",
+      "color": "#464d49",
+      "darkColor": "#ffffff",
+      "size": 13,
+      "width": 70,
+      "height": 13,
+      "x": 124,
+      "y": 320
+    },
+    {
+      "key": "line2",
+      "width": 70,
+      "color": "#464d49",
+      "darkColor": "#ffffff",
+      "size": 12,
+      "height": 12,
+      "x": 124,
+      "y": 331
+    },
+    {
+      "key": "btn1",
+      "width": 22,
+      "color": "#e6efeb",
+      "darkColor": "#ffffff",
+      "size": 9,
+      "height": 10,
+      "x": 89,
+      "y": 358
+    },
+    {
+      "key": "btn2",
+      "width": 22,
+      "color": "#e6efeb",
+      "darkColor": "#ffffff",
+      "size": 9,
+      "height": 10,
+      "x": 125,
+      "y": 358
+    },
+    {
+      "key": "btn3",
+      "width": 22,
+      "color": "#e6efeb",
+      "darkColor": "#ffffff",
+      "size": 9,
+      "height": 10,
+      "x": 160,
+      "y": 358
+    },
+    {
+      "key": "btn4",
+      "size": 0
+    },
+    {
+      "key": "btn5",
+      "size": 0
+    }
+  ],
+  "buttons": [
+    {
+      "key": "power",
+      "x": 57,
+      "y": 104,
+      "width": 25,
+      "height": 25
+    },
+    {
+      "key": "btnLeft",
+      "x": 103,
+      "y": 432,
+      "width": 17,
+      "height": 20
+    },
+    {
+      "key": "btnRight",
+      "x": 148,
+      "y": 432,
+      "width": 17,
+      "height": 20
+    },
+    {
+      "key": "btnUp",
+      "x": 125,
+      "y": 416,
+      "width": 20,
+      "height": 16
+    },
+    {
+      "key": "btnDown",
+      "x": 125,
+      "y": 444,
+      "width": 20,
+      "height": 16
+    },
+    {
+      "key": "chUp",
+      "x": 132,
+      "y": 91,
+      "width": 20,
+      "height": 25
+    },
+    {
+      "key": "chDwn",
+      "x": 115,
+      "y": 91,
+      "width": 20,
+      "height": 25
+    },
+    {
+      "key": "emergency",
+      "x": 159,
+      "y": 139,
+      "width": 20,
+      "height": 10
+    },
+    {
+      "key": "home",
+      "x": 83,
+      "y": 429,
+      "width": 15,
+      "height": 20
+    },
+    {
+      "key": "close",
+      "x": 168,
+      "y": 430,
+      "width": 15,
+      "height": 20
+    },
+    {
+      "key": "btn1",
+      "x": 89,
+      "y": 395,
+      "width": 22,
+      "height": 12
+    },
+    {
+      "key": "btn2",
+      "x": 126,
+      "y": 395,
+      "width": 22,
+      "height": 12
+    },
+    {
+      "key": "btn3",
+      "x": 160,
+      "y": 395,
+      "width": 22,
+      "height": 12
+    }
+  ],
+  "leds": [
+    {
+      "key": "power",
+      "color": "red",
+      "x": 71,
+      "y": 200,
+      "width": 5,
+      "height": 5,
+      "roundness": "50%"
+    },
+    {
+      "key": "connected",
+      "color": "green",
+      "x": 71,
+      "y": 200,
+      "width": 5,
+      "height": 5,
+      "roundness": "50%"
+    },
+    {
+      "key": "transmit",
+      "color": "orange",
+      "x": 71,
+      "y": 200,
+      "width": 5,
+      "height": 5,
+      "roundness": "50%"
+    }
+  ],
+  "icons": [
+    {
+      "key": "sig",
+      "x": 77,
+      "y": 308,
+      "width": 10,
+      "height": 10
+    },
+    {
+      "key": "scan",
+      "x": 95.4,
+      "y": 308,
+      "width": 10,
+      "height": 10
+    },
+    {
+      "key": "trunk",
+      "x": 113.8,
+      "y": 308,
+      "width": 10,
+      "height": 10
+    },
+    {
+      "key": "warn",
+      "x": 132.2,
+      "y": 308,
+      "width": 10,
+      "height": 10
+    },
+    {
+      "key": "gps",
+      "x": 150.6,
+      "y": 308,
+      "width": 10,
+      "height": 10
+    },
+    {
+      "key": "batt",
+      "x": 169,
+      "y": 308,
+      "width": 10,
+      "height": 10
+    }
+  ]
+}
